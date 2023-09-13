@@ -9,7 +9,7 @@ body {
     background-color: #f0f0f0; /* Cor de fundo da tela */
 }
 
-#formCadastro{
+form{
     position: absolute;
     width: 60%; 
     height: 75%;
@@ -25,14 +25,14 @@ body {
     top: 5%;
 }
 
-#formCadastro input{
+form input{
     padding: 5px;
     font-size: 22px;
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
-#formCadastro button{
+form button{
     padding: 5px;
     font-size: 22px;
     margin-top: 15px;
@@ -86,4 +86,8 @@ table th {
 .btnEditar:active{
     background-color: rgb(155, 155, 8);
     padding: 8px 30px 8px 30px;
+}
+
+#formEditar{
+
 }

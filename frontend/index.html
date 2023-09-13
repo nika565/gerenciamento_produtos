@@ -8,9 +8,11 @@
 </head>
 <body>
 
+    <!-- Div onde vai ser exibido todo conteúdo da página -->
     <div class="exibicao">
     </div>
 
+    <!-- Formulário de cadastro de produto -->
     <form id="formCadastro">
         <h2>Cadastrar produto</h2>
 
@@ -28,6 +30,27 @@
 
         <button type="submit">Cadastrar</button>
         <button type="button" id="fecharModal">Voltar</button>
+
+    </form>
+
+    <!-- Formulário de edição do produto -->
+    <form id="formEditar">
+        <h2>Editar produto</h2>
+
+        <label>Nome:</label>
+        <input type="text" id="nomeEditar" required>
+
+        <label>Descrição:</label>
+        <textarea id="descEditar" cols="30" rows="10" minlength="5" maxlength="150" required></textarea>
+
+        <label>Preço:</label>
+        <input type="number" id="precoEditar">
+
+        <label>Quantidade:</label>
+        <input type="number" id="qtdEditar">
+
+        <button type="submit" id="enviarEditado">Editar</button>
+        <button type="button" id="fecharModalEditar">Voltar</button>
 
     </form>
     

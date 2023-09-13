@@ -129,12 +129,12 @@ const produtoController = {
             // Pegando o ID pela URL
             const id = req.params.id;
 
-            const resposta = ProdutoModel.findByIdAndDelete(id);
+            const resposta = await ProdutoModel.findByIdAndDelete(id);
 
             if (!resposta) {
                 res.status(404).json({ msg: "Não foi possível excluir o produto" })
             } else {
-                res.status(200).json({ msg: "Produto excluido com sucesso.", resposta })
+                res.status(200).json({ msg: "Produto excluido com sucesso."})
             }
 
             return;

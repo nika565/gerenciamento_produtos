@@ -1,6 +1,9 @@
 // Funções importadas
 import { buscarProdutos, exibir } from "./modules/ler/todosProdutos.js";
+import { produtoEspecifico } from "./modules/ler/produto.js";
 import { visibilidadeCadastro, cadastrarProduto } from "./modules/criar/criar.js";
+import { editar, habilitarEdicao } from "./modules/editar/editar.js";
+import { apagar } from "./modules/deletar/deletar.js";
 
 // Buscando os produtos cadastrados assim que carregar a página
 window.addEventListener('load', async () => {
@@ -38,4 +41,49 @@ formCadastro.addEventListener('submit', async (evento) => {
 
     await cadastrarProduto(produto);
 
+});
+
+// Pegar os eventos de clique nos botões de editar e apagar
+document.addEventListener('click', async evento => {
+
+    // Selecionando o elemento clicado
+    const elemento = evento.target;
+
+    if (elemento.classList.contains('btnEditar')) {
+
+        const id = elemento.value;
+        
+        const produtoEditar = await produtoEspecifico(id);
+
+        habilitarEdicao(produtoEditar);
+
+    }
+
+    if (elemento.classList.contains('btnApagar')) {
+
+        const id = elemento.value;
+        
+        await apagar(id);
+
+    }
+
+}); 
+
+// Processo de edição do produto
+const formEditar = document.querySelector('#formEditar');
+formEditar.addEventListener('submit', async evento => {
+
+    evento.preventDefault();
+
+    // Dados a serem editado
+    const produto = {
+        nome: document.querySelector('#nomeEditar').value,
+        descricao: document.querySelector('#descEditar').value,
+        preco: document.querySelector('#precoEditar').value,
+        qtd: document.querySelector('#qtdEditar').value
+    }
+
+    const id = document.querySelector('#enviarEditado').value;
+    
+    await editar(id, produto);
 });
