@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lista de todos os produtos</title>
+</head>
+<body>
+
+    <div class="exibicao">
+    </div>
+
+    <form id="formCadastro">
+        <h2>Cadastrar produto</h2>
+
+        <label>Nome:</label>
+        <input type="text" id="nomeProduto" required>
+
+        <label>Descrição:</label>
+        <textarea id="descProduto" cols="30" rows="10" minlength="5" maxlength="150" required></textarea>
+
+        <label>Preço:</label>
+        <input type="number" id="precoProduto">
+
+        <label>Quantidade:</label>
+        <input type="number" id="qtdProduto">
+
+        <button type="submit">Cadastrar</button>
+        <button type="button" id="fecharModal">Voltar</button>
+
+    </form>
+    
+    <script type="module" src="./js/index.js"></script>
+</body>
+</html>

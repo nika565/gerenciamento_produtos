@@ -21,16 +21,16 @@ const produtoController = {
             const resposta = await ProdutoModel.create(produto);
 
             if (!resposta) {
-                res.status(400).json({msg: "Erro ao salvar o produto."})
+                res.status(400).json({ msg: "Erro ao salvar o produto." })
             } else {
-                res.status(201).json({msg: "Produto cadastrado com sucesso.", resposta});
+                res.status(201).json({ msg: "Produto cadastrado com sucesso.", resposta });
             }
 
             return;
-            
+
         } catch (error) {
             console.log(error);
-            res.status(500).json({msg: "Algo deu errado no servidor..."});
+            res.status(500).json({ msg: "Algo deu errado no servidor..." });
             return;
         }
 
@@ -43,21 +43,13 @@ const produtoController = {
 
             const resposta = await ProdutoModel.find();
 
-            if (resposta.length === 0) {
-
-                res.status(404).json({msg: "Nenhum produto encontrado..."});
-
-            } else {
-
-                res.status(200).json(resposta);
-
-            }
+            res.status(200).json({produtos: resposta});
 
             return;
-            
+
         } catch (error) {
             console.log(error);
-            res.status(500).json({msg: "Algo deu errado no servidor..."});
+            res.status(500).json({ msg: "Algo deu errado no servidor..." });
         }
 
     },
@@ -66,7 +58,7 @@ const produtoController = {
     procurar: async (req, res) => {
 
         try {
-            
+
             // Pegando o ID que veio pela URL
             const id = req.params.id;
 
@@ -74,8 +66,8 @@ const produtoController = {
 
             if (!resposta) {
 
-                res.status(404).json({msg: 'Produto não encontrado.'});
-            
+                res.status(404).json({ msg: 'Produto não encontrado.' });
+
             } else {
 
                 res.status(200).json(resposta);
@@ -86,7 +78,7 @@ const produtoController = {
 
         } catch (error) {
             console.log(error);
-            res.status(500).json({msg: "Algo deu errado no servidor..."});
+            res.status(500).json({ msg: "Algo deu errado no servidor..." });
             return;
         }
 
@@ -112,17 +104,17 @@ const produtoController = {
             const resposta = await ProdutoModel.findByIdAndUpdate(id, produto);
 
             if (!resposta) {
-                res.status(400).json({msg: "Não foi possível editar o produto"});
+                res.status(400).json({ msg: "Não foi possível editar o produto" });
             } else {
-                res.status(200).json({msg: "Produto editado com sucesso!"});
+                res.status(200).json({ msg: "Produto editado com sucesso!" });
             }
 
             return;
-            
+
         } catch (error) {
-            
+
             console.log(error);
-            res.status(500).json({msg: "Algo deu errado no servidor..."});
+            res.status(500).json({ msg: "Algo deu errado no servidor..." });
             return;
 
         }
@@ -140,17 +132,17 @@ const produtoController = {
             const resposta = ProdutoModel.findByIdAndDelete(id);
 
             if (!resposta) {
-                res.status(404).json({msg: "Não foi possível excluir o produto"})
+                res.status(404).json({ msg: "Não foi possível excluir o produto" })
             } else {
-                res.status(200).json({msg: "Produto excluido com sucesso.", resposta})
+                res.status(200).json({ msg: "Produto excluido com sucesso.", resposta })
             }
 
             return;
-            
+
         } catch (error) {
-            
+
             console.log(error);
-            res.status(500).json({msg: "Algo de errado com o servidor..."});
+            res.status(500).json({ msg: "Algo de errado com o servidor..." });
             return;
 
         }

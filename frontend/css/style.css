@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Define a altura da tela inteira */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Centraliza verticalmente */
+    background-color: #f0f0f0; /* Cor de fundo da tela */
+}
+
+#formCadastro{
+    position: absolute;
+    width: 60%; 
+    height: 75%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+    top: 5%;
+}
+
+#formCadastro input{
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#formCadastro button{
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+		/* Juntar as bordas da tabela*/
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+table td,
+table th {
+    border: 1px solid black;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+
+.exibicao{
+    width: 90%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.btnApagar{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 35px 10px 35px;
+    font-weight: bold;
+}
+
+.btnEditar{
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px 35px 10px 35px;
+    font-weight: bold;
+}
+
+.btnApagar:active{
+    background-color: rgb(155, 7, 7);
+    padding: 8px 30px 8px 30px;
+}
+
+.btnEditar:active{
+    background-color: rgb(155, 155, 8);
+    padding: 8px 30px 8px 30px;
+}
