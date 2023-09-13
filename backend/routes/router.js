@@ -1,6 +1,11 @@
 // usando o roteador para gerenciar as rotas da aplicação inteira
 const roteador = require('express').Router();
 
-roteador.route('/').get((req, res) => res.send(`Olá mundo!`))
+// Importando o roteador de produto
+const roteadorProduto = require('./produto');
+
+// Usando a rota de produto
+roteador.use('/', roteadorProduto);
+
 
 module.exports = roteador
